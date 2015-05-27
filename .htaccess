@@ -10,7 +10,3 @@ AddOutputFilterByType DEFLATE application/xhtml+xml
 AddOutputFilterByType DEFLATE application/rss+xml
 AddOutputFilterByType DEFLATE application/javascript
 AddOutputFilterByType DEFLATE application/x-javascript
-
-Options +FollowSymlinks
-RewriteEngine on
-# RewriteRule ^(.*)\.php http://adamsaltiel.co.uk/public/index.html [L,R=301]

@@ -1,82 +1,403 @@
-<html> 
-<head> 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script> 
-<script src="js/skulpt.js" type="text/javascript"></script> 
-<script src="js/builtin.js" type="text/javascript"></script> 
+<!DOCTYPE html> 
+<html lang="en">
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if (IE 9)]><html class="no-js ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]--> 
+  <head>
+  <!-- Meta Tags -->
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-</head> 
+	<title>adam saltiel psychotherapist</title>
+	<meta name="description" content="Insert Your Site Description" />
+	<meta name="author" content="">
+	<meta name="HandheldFriendly" content="true">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="author" content="adamsaltiel">
+  	<!-- Mobile Specifics -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="MobileOptimized" content="320"/>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-<body> 
+  <link href="css/bray.css" rel="stylesheet">
 
-<script type="text/javascript"> 
-// output functions are configurable.  This one just appends some text
-// to a pre element.
-function outf(text) { 
-    var mypre = document.getElementById("output"); 
-    mypre.innerHTML = mypre.innerHTML + text; 
-} 
-function builtinRead(x) {
-    if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
-            throw "File not found: '" + x + "'";
-    return Sk.builtinFiles["files"][x];
-}
+  <!-- Favicons and Touch Device Icons -->
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="touch-icon-iphone-precomposed.png">
+  <link rel="apple-touch-icon" sizes="72x72"   href="touch-icon-ipad-precomposed.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina-precomposed.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina-precomposed.png"> 
+	<!-- Import CSS -->
+	<link rel="stylesheet" href="css/main.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	
+	<!-- Import JS -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.easing.min.js"></script>
+	<script src="js/jquery.scrollto.min.js"></script>
+	<script src="js/slabtext.min.js"></script>
+	<script src="js/jquery.nav.js"></script>
+	<script src="js/main.js"></script>
+	
+   
 
-// Here's everything you need to run a python program in skulpt
-// grab the code from your textarea
-// get a reference to your pre element for output
-// configure the output function
-// call Sk.importMainWithBody()
-function runit() { 
-   var prog = document.getElementById("yourcode").value;
-   var mypre = document.getElementById("output"); 
-   mypre.innerHTML = '';
-   Sk.canvas = "mycanvas";
-   Sk.pre = "output";
-   Sk.configure({output:outf, read:builtinRead}); 
-   eval(Sk.importMainWithBody("<stdin>",false,prog));
-} 
-</script> 
+<!-- Mobile Internet Explorer ClearType Technology -->
+<!--[if IEMobile]>  <meta http-equiv="cleartype" content="on">  <![endif]-->
 
-<h3>Try This</h3> 
-<form> 
-<textarea id="yourcode" cols="40" rows="10" >import turtle
+<!-- Bootstrap -->
+<link href="_include/css/bootstrap.min.css" rel="stylesheet">
 
-t = turtle.Turtle()
-t.forward(100)
+<!-- Main Style -->
+<link href="_include/css/main.css" rel="stylesheet">
 
-print "Hello World" 
+<!-- Supersized -->
+<link href="_include/css/supersized.css" rel="stylesheet">
+<link href="_include/css/supersized.shutter.css" rel="stylesheet">
 
-t.position()(150.00,150.00)
+<!-- FancyBox -->
+<link href="_include/css/fancybox/jquery.fancybox.css" rel="stylesheet">
 
-for c in ['red', 'green', 'yellow', 'blue']:
-    t.color(c)
-    t.forward(75)
-    t.left(90)
+<!-- Font Icons -->
+<link href="_include/css/fonts.css" rel="stylesheet">
 
-</textarea><br /> 
-<button type="button" onclick="runit()">Run</button> 
-</form> 
-<pre id="output" ></pre> 
-<!-- If you want turtle graphics include a canvas 
-<canvas id="mycanvas" ></canvas> 
+<!-- Shortcodes -->
+<link href="_include/css/shortcodes.css" rel="stylesheet">
 
-<textarea id="code" cols="85" rows="25">
+<!-- Responsive -->
+<link href="_include/css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="_include/css/responsive.css" rel="stylesheet">
+
+<!-- Google Font -->
+<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
+
+<!-- Fav Icon -->
+<link rel="shortcut icon" href="#">
+
+<link rel="apple-touch-icon" href="#">
+<link rel="apple-touch-icon" sizes="114x114" href="#">
+<link rel="apple-touch-icon" sizes="72x72" href="#">
+<link rel="apple-touch-icon" sizes="144x144" href="#">
+
+<!-- Modernizr -->
+<script src="_include/js/modernizr.js"></script>
+
+<!-- Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'Insert Your Code']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Analytics --> 
+  
+</head>
+ 
+  <script type="text/javascript">
+    window.onload = function() {
+      var imageEls = document.querySelectorAll(".figure img");
+      for (var i = 0; i < imageEls.length; i++) {
+        var imageEl = imageEls[i];
+        var parent = imageEl.parentNode;
+        var captionEl = parent.querySelector(".caption");
+        if (captionEl) {
+          function transferWidth() {
+            captionEl.style["max-width"] = imageEl.naturalWidth+"px";
+          }
+          if (imageEl.complete) {
+            transferWidth();
+          } else {
+            imageEl.onload = transferWidth;
+          }
+        }
+      };
+    };
+  </script>   
+  
+  <!-- script>document.createElement("myHero")</script -->
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  <style>
+  myHero {
+    display: block;
+    background-color: #ddd;
+    padding: 50px;
+    font-size: 30px;
+  } 
+  </style>
+  <main>
+    <div id="header">
+		<div class="container">
+
+			<div class="row">
+
+					<i id="nav-button" class="icon-circle-arrow-down"></i>
+					<h2 id="logo"><a href="index.html">The &nbsp;Nature &nbsp;Of &nbsp;Psychotherapeutic&nbsp;<span class="highlight">&nbsp;Help</span></a></h2>
+				
+
+				<div id="top-nav" class="">
+					<ul id="fixed-nav">
+						<li class="current"><a href="#home01">Home01</a></li>
+						<li><a href="#services01">Top Services</a></li>
+						<li><a href="#services">Services</a></li>
+						<li><a href="#aboutus">About</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</div><!-- End Header -->
+			<!-- Services Section -->
+	<!-- class section-alt is to give a different color please edit css/style.css to change the color -->
+	<div class="section section-alt" id="services">
+		<div class="container">
+			<div class="content">
+				<div class="row" >
+					<div class="title">
+						<h2>Services</h2>
+						<div class="hr hr-small hr-center"><span class="hr-inner"></span></div>
+						<p>I work with a wide variety of individuals. I am interested in
+						what each person has to tell me and in arriving at an understanding of what
+						I am being told and what the process of therapy is together.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span4 i-block">
+						<i class="icon-mobile-phone"></i>
+						<h3>Block-A</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat, justo sed tincidunt iaculis, nisl enim rutrum dolor, in posuere purus risus vel quam</p>
+					</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!-- End Services Section -->
+	<div>
+	<br>..</br>
+	<br>...</br>
+	<br>....</br>
+	</div>
+	<header>
+		<nav class="wrapper">
+			<ul>
+				<li class="logo"><a href="#">Sitename</a></li>
+				<li><a href="#">Blog</a></li>
+				<li class="active"><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+<table style="width:80%">
+  <tr>
+    <td><div class="article-abstract">
+    Broad Discussion
+  </div></td>
+    <td><div class="article-abstract">
+    Broad Discussion
+  </div></td>		
+    <td><myHero>My First Hero</myHero></td>
+  </tr>
+</table>
+
+   <body >
+
+         <!-- Start Icons Section -->
+        <div class="row">
+        	<div class="span12">
+                <div class="title-page margin-50">
+                    <h2 class="title">Icons</h2>
+                    <h3 class="title-description"><span class="color-text">200+</span> Custom and Font Face Icons - Retina Ready.</h3>
+                </div>
+                
+                <nav class="icons-example">
+                    <ul>
+                        
+                        
+                        <li><a href="#"><span class="font-icon-read-more"></span></a></li>
+                        <li><a href="#"><span class="font-icon-blockquote"></span></a></li>
+                        <li><a href="#"><span class="font-icon-file-empty"></span></a></li>
+                        <li><a href="#"><span class="font-icon-file"></span></a></li>
+                        <li><a href="#"><span class="font-icon-copy"></span></a></li>
+                        <li><a href="#"><span class="font-icon-paste"></span></a></li>
+                        <li><a href="#"><span class="font-icon-align-left"></span></a></li>
+                        <li><a href="#"><span class="font-icon-align-right"></span></a></li>
+                        
+                        <li><a href="#"><span class="font-icon-text-width"></span></a></li>
+                        <li><a href="#"><span class="font-icon-font"></span></a></li>
+                        <li><a href="#"><span class="font-icon-bold"></span></a></li>
+                        <li><a href="#"><span class="font-icon-italic"></span></a></li>
+                        <li><a href="#"><span class="font-icon-underline"></span></a></li>
+                        <li><a href="#"><span class="font-icon-strikethrough"></span></a></li>
+                            
+                    </ul>
+                </nav>
+            </div>	
+        </div>
+        <!-- End Icons Section -->   
+    
+    <div class="article"> <!--0 -->
+<div id="cover" class="content-node cover">
+</div>
+<div class="toc">
+  
+  <div class="toc-entries">
+   <li>Contents </li> 
+      <a href="#">Introduction</a>
+    
+      <a href="#">Hypothesis Testing</a>
+    
+      <a href="#">Discusion - Key Technologies</a>
+   </div>
+</div>
+
+<div class="flexbox"> <!--1 -->
+  <div class="left"> <!--3 -->
+    What can I do in this file
+  with class="content" does make a difference so this should be any text?
+</div> <!-- 3 -->
+</div> <!--1 -->
+
+<!-- div class="content" --> <!--2 -->
+<div class="flexbox"> <!--1 -->
+<div class="left"> <!-- 4 -->
+<h1>Hello World</h1>
+<canvas id="nodes" width="400" height="400" ></canvas>
+</div> <!-- 4 -->
+
+<div class="right"> <!-- 5 -->
+  <a>Main content of your post. Right p 100% centre</a>
+  The purpose of this document is to outline a new platform which is designed specifically for the use of professionals working with individuals who seek intervention in their emotional and mental life and those individuals themselves.<br/>The broad aim is that of engagement both between groups of professional in the formal setting of their work, to facilitate communication in their tasks, and across disparate groups of professionals to encourage active understanding of clinical and theoretical materials in contexts that have, as yet, to evolve.<br/>At the same time the aim is to encourage participation of those seeking care, again in ways that have yet to evolve, but certainly through engagement with others including seekers and those giving care.<br/> <br/>One immediate reaction to my ideas is that I am thinking of a forum, i.e. nothing new. I know of some and there must be several others.<br/>These are self defining by criteria such as membership of other organisations and groups such as professional interests or religious affiliation.<br/> <br/>Fora are very much embedded in the history of the web a subject I haven’t made a study of.<br/> <br/>This platform would be different through careful attention to access, ownership, responsibility and participants respective roles along with the data ML (machine learning) aspect.<br/>Here, the general issues are those of pattern matching.<br/>A particular concept of note is that of bias, and how to distinguish a valuable foreground from noise. This is well known in statistics as to where to set the threshold for noise. Another aspect of the same problem is that ML can be used to avoid filtering into preset patterns established prior to the actual data presented, which is effectively bias.<br/>Professionals in their own field often express strong a bias in the array of concepts they deploy. The issue here is that in expressing that bias other significant patterns are missed, or, to put it another way, the time it takes for the significance of other patterns to emerge is greater than it need be.<br/>Looking further at the possibilities of ML in relation to data external third parties may, with consent, also take an interest. Something which potentially could be revenue producing.<br/>There are other immediate differences. Existing forums evolve their own moderating and selection criteria. These are, by definition, narrow and exclusive.<br/>The broad front of the NHS has had little success with such forums, although they try, precisely because it is too broad. <br/>Mixed up in this is a confusion of loyalty, affiliation and identity.<br/> <br/>I am going to try a geographic analogy:Oakland, Berkeley, San Francisco.<br/>Imagine I am in San Francisco and someone wants to know how to get here. It is Different instructions are needed which depend on an origin in Oakland or Berkeley. It also matters where in each location is the start or end point. Or perhaps we might decide to meet elsewhere?<br/>These are some of the possibilities of transformation of contextual knowledge.<br/>There is a role for this on the professional side of the equation, and that is the argument I am going to try to sharpen up and put to professional groups including tertiary worker stakeholders.
+  </div> <!--5 -->
+
+</div> <!-- 1 -->
+<!-- /div --> <!--2 -->
+
+</div> <!--0 -->
+<!-- START THUMBS -->
+<div class="span9">
+            	<div class="row">
+                	<section id="projects">
+                    	<ul id="thumbs">
+                        
+							<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 design">
+                            	<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The City" href="_include/img/work/full/image-01-full.jpg">
+                                	<span class="overlay-img"></span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <!-- Thumb Image and Description -->
+                                <img src="_include/img/work/thumbs/image-01.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                            </li>
+                        	<!-- End Item Project -->
+                            
+							<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 design">
+                            	<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Office" href="_include/img/work/full/image-02-full.jpg">
+                                	<span class="overlay-img"></span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <!-- Thumb Image and Description -->
+                                <img src="_include/img/work/thumbs/image-02.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                            </li>
+                        	<!-- End Item Project -->
+                            
+							<!-- Item Project and Filter Name -->
+                        	<li class="item-thumbs span3 photography">
+                            	<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="_include/img/work/full/image-03-full.jpg">
+                                	<span class="overlay-img"></span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                <!-- Thumb Image and Description -->
+                                <img src="_include/img/work/thumbs/image-03.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                            </li>
+                        	<!-- End Item Project -->
+                        </ul>
+                    </section>
+                    
+            	</div>
+            </div>
+<!-- END THUMBS -->
+<div class="flexbox">
+<div class="left">
+		<h3>CSS Align Left</h3>
+		<p>I'm some text in a left block element filling the left side of its container.</p>
+		<p>I'm left aligned and aligned at the top.</p>
+	</div>
+	<div class="right">
+		<h3>CSS Align Bottom Right</h3>
+		<p>I'm some text in a right block element at the bottom of its container.</p>
+		<p>I'm right aligned and aligned at the bottom, regardless of the container height or width.</p>
+	</div>
+</div>
+	<section id="content-main" class="wrapper clear">
+		<div class="col-2-3">
+			<h1>About</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis nulla in porttitor pharetra. Proin sit amet ipsum non tellus imperdiet viverra sed et sem. Nullam ligula tellus, feugiat a dolor ac, laoreet hendrerit neque. Donec vitae congue dui. Nulla varius lobortis nunc in adipiscing. Mauris sollicitudin tortor nec quam dapibus, nec euismod sem tincidunt. Sed sed ante urna. Curabitur sollicitudin enim id sapien fringilla pharetra in nec lectus. Praesent quis dolor bibendum lacus ullamcorper convallis nec consequat ligula. Sed augue ligula, feugiat sodales elit id, pretium tristique tortor. Proin malesuada tellus vel augue pharetra, a tempor massa varius. Quisque non euismod ipsum. Sed diam turpis, posuere at velit ut, vehicula faucibus nisi. Fusce rhoncus tincidunt erat vitae tincidunt.</p>
+			<p>Suspendisse sed turpis vitae turpis condimentum eleifend. Ut faucibus iaculis urna, ut fringilla neque tristique a. Fusce dui nulla, venenatis lobortis dui eu, porta rutrum sapien. Donec lobortis est vel magna semper laoreet. Donec eu tortor pulvinar, sagittis nulla ac, adipiscing mauris. Vivamus iaculis commodo mattis. Aliquam vehicula, diam sit amet sagittis imperdiet, felis nulla molestie velit, quis luctus dui mi vel libero. In lobortis, velit id tincidunt venenatis, sapien tortor gravida quam, non condimentum enim erat nec purus. Ut velit nisl, vulputate eu sapien non, tristique mollis neque.</p>
+		</div>
+		
+		<div class="col-1-3 sidebar">
+			<h3>Corporate Pages</h3>
+			<nav>
+				<ul>
+					<li class="active"><a href="#">About the company</a></li>
+					<li><a href="#">Meet the Team</a></li>
+					<li><a href="#">Our Mission</a></li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+</main>
 
 
+  <ul>
+  <p>
+    
+      <li>
+        <a href="/2020/01/01/example/" title="psychoanalys.is">
+          psychoanalys.is
+        </a>
+      </li>
+    
+  </p>
+  </ul>
 
-</textarea> -->
 
+    
+  </body>
+   <script type="text/javascript">
+  draw = function(){
+$.getScript("js/pyrm.js", function(){
 
-<!--
-<p>Interactive:<textarea id="interactive" cols="85" rows="1"></textarea></p>
+   alert("Script loaded and executed.");
 
+   // Use anything defined in the loaded script...
 
-<pre id="output1">
-</pre> -->
-<canvas id="mycanvas"  height="400" width="400"
-  style="border-style: solid; display: none"></canvas>
-
-
-</body> 
-
+});
+}  
+</script>
+<script type="text/javascript">
+draw();
+</script>
 </html>
+
+
+
